@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A598" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="sAH-9d-Ool">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - Bilibili题库-->
+        <scene sceneID="V2J-Wt-A3t">
+            <objects>
+                <viewController storyboardIdentifier="homeController" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FG6-3g-CYU" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tgp-IW-by3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1z2-vR-YVI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="AWC-0M-NMf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="THe-d3-tzj">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <containerView contentMode="scaleToFill" id="9l3-bg-uky">
+                                        <rect key="frame" x="0.0" y="216" width="320" height="504"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="Ntq-mf-tux" kind="embed" id="Q4i-Dm-WFh"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="FG6-3g-CYU" id="Re7-Uc-vrQ"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Bilibili题库" id="Ohv-eg-uOh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="SrD-nZ-SXv">
+                            <connections>
+                                <action selector="showmore:" destination="FG6-3g-CYU" id="BEQ-jx-kek"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backgroundPhoto" destination="1z2-vR-YVI" id="JDs-zQ-Bd8"/>
+                        <outlet property="backgroundPhotoWithImageEffects" destination="AWC-0M-NMf" id="cZ7-l8-V0g"/>
+                        <outlet property="scrollView" destination="THe-d3-tzj" id="VC3-94-6BX"/>
+                        <segue destination="vMy-c4-WJW" kind="modal" identifier="select" id="ovm-Z5-IZJ"/>
+                        <segue destination="EKs-b0-p0F" kind="modal" identifier="filter" id="NlN-Ne-dTL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOF-Oq-Cao" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202" y="-108"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XLV-DD-RnI">
+            <objects>
+                <navigationController storyboardIdentifier="contentController" wantsFullScreenLayout="YES" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0h4-91-w9K" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="KsV-aD-WgC">
+                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" contentMode="scaleToFill" barStyle="black" id="lix-CN-uql">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="FG6-3g-CYU" kind="relationship" relationship="rootViewController" id="JXg-fj-akS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6FO-fE-HB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-258" y="-108"/>
+        </scene>
+        <!--Bilibili Root View Controller-->
+        <scene sceneID="vAY-e6-Wtc">
+            <objects>
+                <viewController storyboardIdentifier="menuController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sAH-9d-Ool" customClass="BilibiliRootViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p5j-xL-hYZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7sL-4v-h6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-623" y="-108"/>
+        </scene>
+        <!--Search Answer - 搜索答案-->
+        <scene sceneID="J5t-Fb-C61">
+            <objects>
+                <tableViewController id="Ntq-mf-tux" customClass="SearchAnswer" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hs0-rd-acc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="lLP-W6-kJ8">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lLP-W6-kJ8" id="gFi-DG-puQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="搜索答案" id="evw-w7-H2c"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="P6p-vw-BPT" id="Opr-s7-3mv"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Db1-za-YyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="be6-xV-QTL">
+                    <connections>
+                        <outlet property="delegate" destination="Ntq-mf-tux" id="y3F-uA-udP"/>
+                        <outlet property="searchContentsController" destination="Ntq-mf-tux" id="YoI-0e-9sJ"/>
+                        <outlet property="searchResultsDataSource" destination="Ntq-mf-tux" id="woa-at-rep"/>
+                        <outlet property="searchResultsDelegate" destination="Ntq-mf-tux" id="mfe-me-j8X"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="P6p-vw-BPT">
+                    <connections>
+                        <outlet property="delegate" destination="Ntq-mf-tux" id="aRH-PJ-7Je"/>
+                        <outlet property="searchContentsController" destination="Ntq-mf-tux" id="mI3-e7-RGE"/>
+                        <outlet property="searchResultsDataSource" destination="Ntq-mf-tux" id="ysi-R3-SCa"/>
+                        <outlet property="searchResultsDelegate" destination="Ntq-mf-tux" id="yhB-PQ-JLh"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="535" y="-40"/>
+        </scene>
+        <!--Select Photo View Controller-->
+        <scene sceneID="k0n-Za-qx1">
+            <objects>
+                <viewController storyboardIdentifier="selectPhotos" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vMy-c4-WJW" customClass="selectPhotoViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="48F-FQ-KGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202" y="565"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="tF7-ys-pzz">
+            <objects>
+                <viewController id="EKs-b0-p0F" customClass="FilterViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Yz-2N-Sch">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UMN-i0-KUE">
+                                <rect key="frame" x="0.0" y="20" width="87" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="完成">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneFilter:" destination="EKs-b0-p0F" eventType="touchUpInside" id="kSY-2E-mG3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XOq-RC-mmb">
+                                <rect key="frame" x="233" y="20" width="87" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel:" destination="EKs-b0-p0F" eventType="touchUpInside" id="tkT-Ar-PwE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zga-6F-IbN" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="608" y="-786"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
